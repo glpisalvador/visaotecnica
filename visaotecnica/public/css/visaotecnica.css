@@ -1,0 +1,796 @@
+/* Plugin Visão Técnica - visual próximo do GLPI nativo; todos os seletores prefixados */
+
+.visaotecnica,
+.visaotecnica-pagina {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+    color: #333;
+    padding: 4px 0 16px;
+}
+
+/* ------------------------------------------------------------ abas de visão */
+.visaotecnica-escopos.nav-tabs {
+    flex-wrap: wrap;
+}
+
+.visaotecnica-escopos .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #495057;
+}
+
+.visaotecnica-escopos .nav-link.active {
+    font-weight: 600;
+    border-bottom-color: transparent;
+}
+
+.visaotecnica-contador {
+    min-width: 18px;
+    padding: 0 6px;
+    border-radius: 9px;
+    background: rgba(13, 110, 253, 0.08);
+    border: 1px solid rgba(13, 110, 253, 0.2);
+    color: #2f5fa8;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 15px;
+    text-align: center;
+}
+
+.visaotecnica-contador.vazio {
+    background: rgba(108, 117, 125, 0.06);
+    border-color: rgba(108, 117, 125, 0.15);
+    color: #999;
+}
+
+.visaotecnica-contador[hidden] {
+    display: none;
+}
+
+/* ------------------------------------------------------------ cartão, barra e filtros */
+.card.visaotecnica-card {
+    border: 1px solid #dee2e6;
+    box-shadow: none;
+    margin: 0;
+    overflow: visible;
+}
+
+.visaotecnica-card > .card-header {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.visaotecnica-card > .card-header h5 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.visaotecnica-card > .card-footer {
+    background: #fff;
+    padding: 8px 15px;
+    border-top: 1px solid #dee2e6;
+}
+
+.visaotecnica-corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow: visible;
+}
+
+.visaotecnica-barra {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 18px;
+}
+
+.visaotecnica-barra .btn,
+.visaotecnica-filtros-rodape .btn,
+.visaotecnica-rodape-form .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.visaotecnica-busca {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.visaotecnica-busca .ti {
+    position: absolute;
+    left: 8px;
+    color: #999;
+    pointer-events: none;
+}
+
+.visaotecnica-busca input {
+    padding-left: 26px;
+    width: 300px;
+    max-width: 100%;
+}
+
+.visaotecnica-grupo-botoes {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.visaotecnica-grupo-botoes [hidden] {
+    display: none;
+}
+
+select.visaotecnica-visoes {
+    width: auto;
+    max-width: 220px;
+    font-size: 12px;
+}
+
+.visaotecnica-direita {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+
+select.visaotecnica-intervalo {
+    width: auto;
+    font-size: 12px;
+}
+
+.visaotecnica-colunas-menu {
+    position: relative;
+}
+
+.visaotecnica-colunas-lista {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 4px);
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 230px;
+    padding: 10px 12px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.visaotecnica-colunas-lista[hidden] {
+    display: none;
+}
+
+.visaotecnica-filtros {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dee2e6;
+    background: #fff;
+}
+
+.visaotecnica-filtros[hidden] {
+    display: none;
+}
+
+.visaotecnica-filtros-grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px 18px;
+}
+
+.visaotecnica-filtros-rodape {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.visaotecnica-data .flatpickr,
+.visaotecnica-data .input-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+.visaotecnica-data input.form-control {
+    margin-right: 4px;
+    min-height: 0;
+    height: calc(1.5em + 0.5rem + 2px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+.visaotecnica-data .input-button {
+    margin-left: 4px;
+}
+
+.visaotecnica-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.visaotecnica-chips[hidden] {
+    display: none;
+}
+
+.visaotecnica-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 1px 4px 1px 10px;
+    border: 1px solid rgba(13, 110, 253, 0.2);
+    border-radius: 12px;
+    background: rgba(13, 110, 253, 0.05);
+    color: #2f3f64;
+    font-size: 11px;
+}
+
+.visaotecnica-chip button {
+    border: 0;
+    background: transparent;
+    color: #6c757d;
+    padding: 0 2px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.visaotecnica-chip-limpar {
+    border: 0;
+    background: transparent;
+    color: #6c757d;
+    font-size: 11px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------ tabela */
+.visaotecnica-tabela-caixa {
+    max-height: calc(100vh - 290px);
+    overflow: auto;
+}
+
+.visaotecnica-tabela {
+    font-size: 12px;
+    margin: 0;
+}
+
+.visaotecnica-tabela thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #f8f9fa;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6c757d;
+    padding: 8px 10px;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+}
+
+.visaotecnica-tabela thead th.visaotecnica-acoes-col {
+    cursor: default;
+}
+
+.visaotecnica-tabela thead th.ordenado-asc::after {
+    content: ' ▲';
+    font-size: 9px;
+}
+
+.visaotecnica-tabela thead th.ordenado-desc::after {
+    content: ' ▼';
+    font-size: 9px;
+}
+
+.visaotecnica-tabela td {
+    padding: 7px 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+    max-width: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.visaotecnica-tabela td.visaotecnica-titulo {
+    white-space: normal;
+    max-width: 380px;
+}
+
+/* Ações sempre à vista, mesmo com a tabela rolando para o lado */
+.visaotecnica-tabela td.visaotecnica-acoes,
+.visaotecnica-tabela th.visaotecnica-acoes-col {
+    position: sticky;
+    right: 0;
+    max-width: none;
+    overflow: visible;
+    background: var(--tblr-bg-surface, #fff);
+    box-shadow: -1px 0 0 #f0f0f0;
+}
+
+.visaotecnica-tabela th.visaotecnica-acoes-col {
+    z-index: 3;
+    background: #f8f9fa;
+}
+
+.visaotecnica-tabela tbody.visaotecnica-carregando {
+    opacity: 0.55;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.visaotecnica-id a,
+.visaotecnica-titulo a {
+    color: #2f3f64;
+    font-weight: 500;
+}
+
+.visaotecnica-titulo {
+    min-width: 220px;
+}
+
+.visaotecnica-novidade {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: rgba(13, 110, 253, 0.6);
+    vertical-align: middle;
+}
+
+.visaotecnica-mudo {
+    color: #999;
+}
+
+.visaotecnica-prioridade {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: var(--visaotecnica-cor, #adb5bd);
+    opacity: 0.75;
+    vertical-align: middle;
+}
+
+.visaotecnica-idade {
+    color: #495057;
+}
+
+.visaotecnica-idade.parado {
+    padding: 1px 8px;
+    border-radius: 10px;
+    background: rgba(255, 193, 7, 0.12);
+    color: #664d03;
+}
+
+.visaotecnica-selo {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    background: rgba(108, 117, 125, 0.1);
+    color: #41464b;
+    white-space: nowrap;
+}
+
+.visaotecnica-selo-aviso {
+    background: rgba(255, 193, 7, 0.12);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    color: #664d03;
+}
+
+.visaotecnica-papel {
+    display: inline-block;
+    padding: 0 7px;
+    border-radius: 10px;
+    background: rgba(13, 110, 253, 0.06);
+    color: #2f5fa8;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.visaotecnica-prazo {
+    width: 90px;
+    height: 6px;
+    border-radius: 3px;
+    background: #e9ecef;
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+
+.visaotecnica-prazo > div {
+    height: 100%;
+    border-radius: 3px;
+}
+
+.visaotecnica-prazo-ok > div {
+    background: rgba(25, 135, 84, 0.5);
+}
+
+.visaotecnica-prazo-proximo > div {
+    background: rgba(255, 193, 7, 0.7);
+}
+
+.visaotecnica-prazo-vencido > div {
+    background: rgba(220, 53, 69, 0.55);
+}
+
+.visaotecnica-tabela td small {
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.visaotecnica-acoes {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.visaotecnica-acoes > span {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.visaotecnica-acoes .btn {
+    padding: 2px 6px;
+}
+
+.btn.visaotecnica-confirmando {
+    color: #b02a37;
+    background: rgba(220, 53, 69, 0.08);
+}
+
+.visaotecnica-vazio {
+    padding: 28px 15px !important;
+    text-align: center;
+    color: #999;
+}
+
+.visaotecnica-vazio .ti-loader-2 {
+    animation: visaotecnica-girar 1s linear infinite;
+}
+
+@keyframes visaotecnica-girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.visaotecnica-rodape {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px 18px;
+}
+
+.visaotecnica-paginacao {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.visaotecnica-paginacao .btn {
+    min-width: 30px;
+    padding: 2px 8px;
+    font-size: 12px;
+}
+
+.visaotecnica-paginacao select {
+    width: auto;
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+.visaotecnica-pequeno {
+    font-size: 11px;
+    color: #6c757d;
+}
+
+/* ------------------------------------------------------------ campos, janelas, configuração */
+.visaotecnica-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.visaotecnica-campo > label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #495057;
+    margin: 0;
+}
+
+.visaotecnica-campo small {
+    font-size: 11px;
+    color: #6c757d;
+}
+
+.visaotecnica-explicacao {
+    font-size: 12px;
+    color: #6c757d;
+    margin: 0;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+}
+
+.visaotecnica-explicacao i {
+    margin-top: 2px;
+}
+
+.visaotecnica-modal .modal-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.visaotecnica-modal .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.visaotecnica-modal .modal-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn.visaotecnica-btn-principal {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #e5a54b;
+    border: 1px solid #e5a54b;
+    color: #fff;
+}
+
+.btn.visaotecnica-btn-principal:hover,
+.btn.visaotecnica-btn-principal:focus {
+    background: #d8973c;
+    border-color: #d8973c;
+    color: #fff;
+}
+
+.visaotecnica-switch .form-check-input {
+    width: 2.5em;
+    height: 1.3em;
+    cursor: pointer;
+}
+
+.visaotecnica-switch .form-check-input:checked {
+    background-color: #f0c946;
+    border-color: #e0b830;
+}
+
+.visaotecnica-switch .form-check-input:focus {
+    border-color: #e0b830;
+    box-shadow: 0 0 0 0.2rem rgba(240, 201, 70, 0.25);
+}
+
+.visaotecnica-switch .form-check-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #495057;
+    cursor: pointer;
+}
+
+.visaotecnica-grade-config {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 20px;
+    align-items: start;
+}
+
+@media (max-width: 1300px) {
+    .visaotecnica-grade-config {
+        grid-template-columns: 1fr;
+    }
+}
+
+.visaotecnica-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.visaotecnica-opcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+}
+
+.visaotecnica-opcoes-coluna {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.visaotecnica-opcao {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+input.visaotecnica-numero,
+select.visaotecnica-numero {
+    max-width: 180px;
+}
+
+.visaotecnica-rodape-form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ------------------------------------------------------------ multiselect e checkbox */
+.visaotecnica-ms {
+    position: relative;
+}
+
+.visaotecnica-ms-cabecalho {
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    background-color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.visaotecnica-ms-dropdown {
+    position: absolute;
+    z-index: 1050;
+    left: 0;
+    right: 0;
+    min-width: 240px;
+    top: calc(100% + 2px);
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.visaotecnica-ms-topo {
+    padding: 6px 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.visaotecnica-ms-busca {
+    max-width: 350px;
+}
+
+.visaotecnica-ms-todos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 5px 10px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+
+.visaotecnica-ms-opcoes {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.visaotecnica-ms-opcao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px;
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.visaotecnica-ms-opcao[hidden] {
+    display: none;
+}
+
+.visaotecnica-ms-opcao:hover {
+    background: #f8f9fa;
+}
+
+.visaotecnica-ms-opcao.selected {
+    background: #e8f4fc;
+}
+
+.visaotecnica-ms-rotulo {
+    flex: 1;
+}
+
+.visaotecnica-ms-rotulo small {
+    color: #999;
+    margin-left: 4px;
+}
+
+.visaotecnica-ms-contador {
+    font-size: 11px;
+    color: #999;
+    margin-top: 3px;
+}
+
+.visaotecnica-ms-contador:empty {
+    display: none;
+}
+
+input.visaotecnica-check {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.15em;
+    height: 1.15em;
+    border: 2px solid #d0d0d0;
+    border-radius: 3px;
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
+    transition: all 0.15s ease-in-out;
+}
+
+input.visaotecnica-check:hover {
+    border-color: #e0b830;
+}
+
+input.visaotecnica-check:focus {
+    outline: none;
+    border-color: #e0b830;
+    box-shadow: 0 0 0 0.2rem rgba(240, 201, 70, 0.25);
+}
+
+input.visaotecnica-check:checked,
+input.visaotecnica-check:indeterminate {
+    background: #f0c946;
+    border-color: #e0b830;
+}
+
+input.visaotecnica-check:checked::after {
+    content: '';
+    position: absolute;
+    left: 0.3em;
+    top: 0.08em;
+    width: 0.3em;
+    height: 0.6em;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input.visaotecnica-check:indeterminate::after {
+    content: '';
+    position: absolute;
+    left: 0.18em;
+    top: 0.42em;
+    width: 0.5em;
+    border-top: 2px solid #fff;
+}
